@@ -3,7 +3,7 @@
 include 'db_connect.php';
 
 // Verifica se o método de requisição é POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Obtendo os dados do formulário
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -28,6 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 else {
-    echo "Método de requisição inválido."
+    echo "Método de requisição inválido.";
 }
 ?>
