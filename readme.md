@@ -1,0 +1,1 @@
+Olá, este é um projeto para a matéria "Desenvolvimento Web" do segundo semestre do segundo ano do Curso Técnio em Informática para a Internet Integrado ao Ensino Médio do Instituto Federal Campus Capivari, feito no ano de 2024 por Denner Eduardo Costa Garcia
