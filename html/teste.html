@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo com Setas</title>
+  <style>
+    /* Estilos para o contêiner principal */
+    .catalogo-container {
+      overflow: hidden;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      background-color: red;
+    }
+
+    /* Estilos para o carrossel */
+    .catalogo {
+      display: flex;
+      transition: transform 0.3s ease;
+      gap: 2%;
+    }
+
+    /* Estilos para cada item do catálogo */
+    .item {
+      min-width: 200px;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px #00000033;
+      text-align: center;
+    }
+
+    /* Estilos para a imagem do item */
+    .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Estilos das setas de navegação */
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+</head>
+<body>
+
+<div class="catalogo-container">
+  <div class="catalogo" id="catalogo">
+    <!-- Exemplo de itens do catálogo -->
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Produto 1">
+      <h3>Produto 1</h3>
+      <p>Descrição do Produto 1</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Produto 2">
+      <h3>Produto 2</h3>
+      <p>Descrição do Produto 2</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Produto 3">
+      <h3>Produto 3</h3>
+      <p>Descrição do Produto 3</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Produto 4">
+      <h3>Produto 4</h3>
+      <p>Descrição do Produto 4</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Produto 5">
+      <h3>Produto 5</h3>
+      <p>Descrição do Produto 5</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Produto 6">
+      <h3>Produto 6</h3>
+      <p>Descrição do Produto 6</p>
+    </div>
+    <div class="item">
+        <img src="https://via.placeholder.com/150" alt="Produto 6">
+        <h3>Produto 7</h3>
+        <p>Descrição do Produto 7</p>
+    </div>
+    <div class="item">
+        <img src="https://via.placeholder.com/150" alt="Produto 6">
+        <h3>Produto 8</h3>
+        <p>Descrição do Produto 8</p>
+    </div>
+    <div class="item">
+        <img src="https://via.placeholder.com/150" alt="Produto 6">
+        <h3>Produto 9</h3>
+        <p>Descrição do Produto 9</p>
+    </div>
+
+    <!-- Adicione mais itens conforme necessário -->
+  </div>
+  <!-- Setas de navegação -->
+  <div class="nav prev" onclick="moverCarrossel(-1)">&#10094;</div>
+  <div class="nav next" onclick="moverCarrossel(1)">&#10095;</div>
+</div>
+
+<script>
+  const catalogo = document.getElementById("catalogo");
+  const items = catalogo.querySelectorAll(".item");
+  const itemsPorPagina = 4; // Número de itens a exibir por vez
+  let paginaAtual = 0;
+
+  function moverCarrossel(direcao) {
+    const totalPaginas = Math.ceil(items.length / itemsPorPagina);
+    
+    // Calcula a nova página
+    paginaAtual += direcao;
+    if (paginaAtual < 0) paginaAtual = 0; // Não volta além do início
+    if (paginaAtual >= totalPaginas) paginaAtual = totalPaginas - 1; // Não passa do final
+
+    // Calcula a posição de deslocamento para a nova página
+    const deslocamento = -paginaAtual * (itemsPorPagina * 220); // 220px é a largura estimada de cada item + gap
+    catalogo.style.transform = `translateX(${deslocamento}px)`;
+  }
+</script>
+
+</body>
+</html>

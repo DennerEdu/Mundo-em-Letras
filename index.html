@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo em Letras</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2><a href="index.html">Inicio</a></h2>
+            <input type="text"> 
+            <img src="img/logo.svg" alt="logo">
+            <h2><a href="html/catalog.html">Catálogo</a></h2>
+            <h2><a href="#">Página 3</a></h2>
+        </header>
+
+        <div class="home-img">
+            <img src="img/img-home.png" alt="">
+        </div>
+        
+        <div class="about">
+            <h1>Sobre o Site</h1>
+            <p>Este é um site feito por mim para a matéria de "Desenvolvimento web" do segundo ano do curso de Técnico em informática para a Internet integrado ao ensino médio no Instituto Federal de São Paulo Campus Capivari </p>
+        </div>
+
+        <footer>
+            <div class="terms"><p>©Todos os direitos reservados</p></div>
+
+            <h2>Feedback</h2>
+            <div class="feedback">
+                <form action="POST" method="feedback.php">
+                    <div class="user_informations">
+                        <label for="name">Insira seu nome:</label>
+                        <input type="text" name="name" placeholder="nome">
+                        <label for="email">Insira seu email:</label>
+                        <input type="email" name="email" placeholder="email@email.com" require>
+                    </div>
+                    <div class="suggestion">
+                        <label for="suggestion" id="suggestion">Insira aqui sua sugestão ou reclamação</label>
+                        <input type="text" name="suggestion" placeholder="Feedback" require>
+                    </div>
+                    <input type="submit" class="submit">
+                </form>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
