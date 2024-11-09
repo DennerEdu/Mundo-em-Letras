@@ -1,9 +1,9 @@
 <?php
 // Dados para a conexão com o banco de dados
 $server = 'localhost';
-$user = '';
+$user = 'root';
 $password = '';
-$db = '';
+$db = 'mundoEmLetras';
 
 // Gerando a conexão com o banco de dados
 $conn = new mysqli($server, $user, $password, $db);

@@ -3,7 +3,7 @@
 include 'db_connect.php';
 
 // Verifica se o método de requisição é POST
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtendo os dados do formulário
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     // Verificando se as informações foram enviadas ao banco de dados
     if ($conn->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso!";
+        echo "Feedback enviado com sucesso, agradecemos!";
     } else {
         echo "Erro: " . $sql . "<br>" . $conn->error;
     }
