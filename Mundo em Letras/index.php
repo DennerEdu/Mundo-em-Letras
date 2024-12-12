@@ -1,0 +1,70 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo em Letras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/headerScript.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class='nav'>
+                <span class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</span>
+                <img src="img/logo.svg" alt="logo">
+            </div>
+            <div class="menu-content" id="menu-content">
+                <h2><a href="index.php">Inicio</a></h2>
+                <h2><a href="pages/catalog.php">Catálogo</a></h2>
+                <?php
+                if (!isset($_SESSION['uid'])) {
+                ?>
+                    <h2><a href="pages/cadaster.php">Cadastrar</a></h2>
+                <?php
+                } // Fim da verificação da variável de sessão
+                else {
+                ?>
+                    <h2><a href="pages/account.php">Conta</a></h2>
+                <?php
+                }
+                ?>
+            </div>
+        </header>
+
+        <div class="home-img">
+            <img src="img/img-home.png" alt="">
+        </div>
+        
+        <div class="about">
+            <h1>Sobre o Site</h1>
+            <p>Este é um site feito por mim para a matéria de "Desenvolvimento web" do segundo ano do curso de Técnico em informática para a Internet integrado ao ensino médio no Instituto Federal de São Paulo Campus Capivari </p>
+        </div>
+
+        <footer>
+            <div class="terms"><p>©Todos os direitos reservados</p></div>
+
+            <h2>Feedback</h2>
+            <div class="feedback">
+                <form action="php/feedback.php" method="POST">
+                    <div class="user_informations">
+                        <label for="name">Insira seu nome:</label>
+                        <input type="text" name="name" placeholder="nome">
+                        <label for="email">Insira seu email:</label>
+                        <input type="email" name="email" placeholder="email@email.com" require>
+                    </div>
+                    <div class="suggestion">
+                        <label for="suggestion" id="suggestion">Insira aqui sua sugestão ou reclamação</label>
+                        <input type="text" name="suggestion" placeholder="Feedback" require>
+                    </div>
+                    <input type="submit" class="submit">
+                </form>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Garante que o container ocupe toda a altura da tela */
+}
+
+.menu-container {
+    height: 100vh; /* Ocupa toda a altura da tela */
+    width: 25%; /* Largura do bloco branco */
+    background-color: #c6c0c0; /* Bloco branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o bloco */
+    z-index: 1000; /* Mantém acima do conteúdo */
+}
+
+header {
+    width: 92%; /* Largura do menu azul dentro do bloco branco */
+    height: 92%; /* Altura do menu azul */
+    margin: 4%;
+    margin-inline: 4%;
+    background-color: #1a70c7; /* Cor de fundo do menu azul */
+    color: white;
+    border-radius: 15px; /* Bordas arredondadas no menu azul */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra no menu azul */
+    overflow-y: auto; /* Permite rolagem no menu azul */
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 15px; /* Espaçamento entre os itens do menu azul */
+    padding: 10px 15px;
+    width: 80%; /* Links ocupam a largura total */
+    display: block; /* Garante que cada link ocupe uma linha */
+    position: relative; /* Necessário para o pseudo-elemento */
+    border-radius: 15px;
+}
+
+header a:hover {
+    background-color: #155a99; /* Efeito de hover para os links */
+}
+
+hr {
+    width: 80%;
+}
+
+header img {
+    border-radius: 50%; /* Faz a imagem de perfil ficar circular */
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.bookClubs {
+    margin-top: 0;
+}
+
+.plus {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.pressed {
+    background-color: black;
+}
+
+.content {
+    margin-left: 25%; /* Espaço para o conteúdo ao lado do menu */
+    padding: 20px;
+    flex: 1;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.content h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.content p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Personalização da barra de rolagem do menu */
+header::-webkit-scrollbar {
+    width: 8px;
+}
+
+header::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+header::-webkit-scrollbar-track {
+    background-color: #2c3e50;
+    border-radius: 10px;
+}
+
+#deleteAccount {
+    width: 100%;
+    display: flex;
+    background-color: red;
+    align-content: center;
+}
+
